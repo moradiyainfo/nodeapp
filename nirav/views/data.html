@@ -1,0 +1,61 @@
+<head>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script type="text/javascript">
+    var row =<%-JSON.stringify(table)%>
+    console.log(row);
+</script>
+	
+	</head>
+	
+
+
+	<div >
+
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title center">Person List With Name</h4>
+					
+					</div>
+					<div class="modal-body">
+						<table class="table table-condensed">
+							<thead>
+								<tr>
+									<th>Firstname</th>
+									<th>Lastname</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+							
+							
+								<% for(var i=0; i<table.length; i++) {%>
+									   <tr>
+										 <td>
+										   <%= table[i].fname %>
+										 </td>
+										 <td>
+										   <%= table[i].lname %>
+										 </td>
+									   </tr>
+									<% } %>
+								
+							</tbody>
+
+						</table>
+					</div>
+
+
+					<div class="modal-footer">
+					</div>
+				</div>
+
+			</div>
+		</div>
+
