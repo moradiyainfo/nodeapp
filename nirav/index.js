@@ -8,6 +8,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var MongoClient = require('mongodb').MongoClient;
 var url2 = "mongodb://localhost:27017";
 var url = "mongodb://nirav:Rohit%40other123@ds153974.mlab.com:53974/?authSource=nirav"
+const PORT = process.env.PORT || 5000
+
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use(express.static('views'));
@@ -82,7 +84,7 @@ app.get('/data', function (req, res) {
 		}, function (err, db) {
 			if (err)
 				throw err;
-			var dbo = db.db("test");
+			var dbo = db.db("nirav");
 
 			dbo.collection("nirav").find({}). toArray(function (err2, res2) {
 					if (err2)
@@ -107,4 +109,4 @@ app.get('/submitdata', function (req, res) {
 		res.redirect('/data');
 });
 
-var server = app.listen(8081);
+var server = app.listen(PORT);
